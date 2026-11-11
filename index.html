@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Inventory Expiry Alert System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="login">
+ <div class="lbox">
+  <div><div style="font-size:90px;text-align:center">🛒</div><h2>SMART INVENTORY<br><span>EXPIRY ALERT SYSTEM</span></h2></div>
+  <div class="lcard">
+   <h3 style="text-align:center;margin:0 0 6px">Login</h3>
+   <label for="u">Username</label><input id="u" value="admin">
+   <label for="p">Password</label><input id="p" type="password" value="1234">
+   <label style="font-size:12px"><input type="checkbox" style="width:auto" onchange="p.type=this.checked?'text':'password'"> Show password</label>
+   <button class="b-blue" style="width:100%;margin-top:14px" onclick="login()">LOGIN</button>
+   <small id="lerr" style="color:#e53935"></small>
+  </div>
+ </div>
+</section>
+
+<div id="app">
+ <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">☰</button>
+ <nav>
+  <b>📦 Expiry Alert</b>
+  <a data-v="dash">🏠 Dashboard</a><a data-v="add">➕ Add Product</a><a data-v="list">📋 View Products</a>
+  <a data-v="alert">⚠️ Alerts</a><a data-v="ai">🤖 AI Prediction</a><a data-v="heat">🔥 Heat Map</a>
+  <a data-v="disc">🏷️ Discounts</a><a data-v="rep">📊 Reports</a><a onclick="logout()">🚪 Logout</a>
+ </nav>
+ <main id="view"></main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
